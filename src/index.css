@@ -1,35 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
+@layer base {
+  * {
+    font-family: 'JetBrains Mono', monospace;
+  }
 
-@keyframes logo-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.6); }
-}
+  body {
+    @apply bg-white text-black antialiased;
+  }
 
-@keyframes text-glow {
-  0%, 100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
-  50% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.6); }
-}
+  button {
+    @apply focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2;
+  }
 
-@keyframes form-glow {
-  0%, 100% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.1); }
-  50% { box-shadow: 0 0 60px rgba(255, 255, 255, 0.2); }
-}
-
-@keyframes button-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); }
-  50% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.4); }
-}
-
-@keyframes pulse-subtle {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
+  input, textarea {
+    @apply focus:outline-none focus:ring-2 focus:ring-black;
+  }
 }
 
 @keyframes slide-in-up {
@@ -191,36 +181,30 @@
   background: rgba(255, 255, 255, 0.8);
 }
 
-/* Scrollbar styling for dark theme */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
+  @apply bg-gray-100;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
+  @apply bg-gray-400;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
+  @apply bg-gray-600;
 }
 
-/* Selection styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #9ca3af #f3f4f6;
+}
+
 ::selection {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-/* Focus states for accessibility */
-button:focus-visible,
-input:focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.5);
-  outline-offset: 2px;
+  @apply bg-black text-white;
 }
 
 /* Resizer cursor styles */
